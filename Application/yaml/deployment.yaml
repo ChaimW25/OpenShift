@@ -33,3 +33,4 @@ spec:
       maxUnavailable: 25%
       maxSurge: 25%
   revisionHistoryLimit: 10
+  
