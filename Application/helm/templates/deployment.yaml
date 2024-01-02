@@ -18,9 +18,6 @@ spec:
           name: '{{ .Chart.Name }}-html'
           defaultMode: 420
       containers:
-        volumeMounts:
-        - name: index-html
-          mountPath: /tmp/html # this will mount the html.index file to it ap
         - resources: {}
           terminationMessagePath: /dev/termination-log
           name: {{ .Chart.Name }}
@@ -29,6 +26,9 @@ spec:
               protocol: TCP
           imagePullPolicy: Always
           terminationMessagePolicy: File
+          volumeMounts:
+          - name: index-html
+            mountPath: /tmp/html # this will mount the html.index file to it ap
           image: {{ .Values.containers.image }}:{{ .Values.containers.tag }}
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
