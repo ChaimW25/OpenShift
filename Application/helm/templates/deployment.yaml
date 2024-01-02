@@ -27,8 +27,8 @@ spec:
           imagePullPolicy: Always
           terminationMessagePolicy: File
           volumeMounts:
-        - name: index-html
-          mountPath: /tmp/html # this will mount the html.index file to it ap
+          - name: index-html
+            mountPath: /tmp/html # this will mount the html.index file to it ap
           readinessProbe:
             httpGet:
               path: /health/readiness # this check the application url path
